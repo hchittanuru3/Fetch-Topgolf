@@ -145,6 +145,8 @@ class GraspingClient(object):
         # insert objects to scene
         objects = list()
         idx = -1
+        rospy.loginfo("WELP")
+        rospy.loginfo(find_result.objects)
         for obj in find_result.objects:
             idx += 1
             obj.object.name = "object%d"%idx
@@ -186,7 +188,11 @@ class GraspingClient(object):
 
     def getGraspableObject(self):
         graspable = None
+        rospy.loginfo("TESTING1")
+        rospy.loginfo(self.objects)
         for obj in self.objects:
+            rospy.loginfo("TESTING")
+            rospy.loginfo(obj)
             # need grasps
             if len(obj.grasps) < 1:
                 continue
@@ -198,9 +204,9 @@ class GraspingClient(object):
                obj.object.primitives[0].dimensions[0] < 0.03 or \
                obj.object.primitives[0].dimensions[0] > 0.25:
                 continue
-            # has to be on table
-            if obj.object.primitive_poses[0].position.z < 0.5:
-                continue
+            #commenting this out because ball can be on floor
+            #if obj.object.primitive_poses[0].position.z < 0.5:
+                #continue
             print obj.object.primitive_poses[0], obj.object.primitives[0]
             return obj.object, obj.grasps
         # nothing detected
@@ -303,7 +309,7 @@ if __name__ == "__main__":
     grasping_client.stow()
 
     while not rospy.is_shutdown():
-        head_action.look_at(1.2, 0.0, 0.0, "base_link")
+        head_action.look_at(1, 0.0, 0.0, "base_link")
 
         # Get block to pick
         fail_ct = 0
@@ -315,7 +321,7 @@ if __name__ == "__main__":
                 rospy.logwarn("Perception failed.")
                 # grasping_client.intermediate_stow()
                 grasping_client.stow()
-                head_action.look_at(1.2, 0.0, 0.0, "base_link")
+                head_action.look_at(1, 0.0, 0.0, "base_link")
                 continue
 
             # Pick the block

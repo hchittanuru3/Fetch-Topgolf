@@ -1,0 +1,7 @@
+<launch>
+<include file="$(find fetch_navigation)/launch/fetch_nav.launch">
+<arg name="map_file" value="/home/chaitya/catkin_ws/src/Fetch-Topgolf/map/playground.yaml"/>
+</include>
+<node pkg="rviz" type="rviz" name="$(anon rivz)" args="-d $(find Fetch-Topgolf)/config/navigation.rviz">
+</node>
+</launch>

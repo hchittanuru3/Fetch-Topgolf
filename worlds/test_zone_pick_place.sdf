@@ -13,7 +13,7 @@
     <include>
       <uri>model://cafe_table</uri>
       <name>table1</name>
-      <pose>1.0 0 -0.08 0 0 0</pose>
+      <pose>1.0 0 -.03 0 0 0</pose>
     </include>
     <include>
       <uri>model://cafe_table</uri>
@@ -22,7 +22,7 @@
     </include>
     <include>
       <uri>model://golf_ball</uri>
-      <pose>0.8 0.1 0.75 0 0 0</pose>
+      <pose>0.64 -.1 0.03 0 0 0</pose>
     </include>
   </world>
 </sdf>
