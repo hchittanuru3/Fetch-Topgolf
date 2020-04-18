@@ -296,7 +296,7 @@
           <material>
             <script>
               <uri>file://media/materials/scripts/gazebo.material</uri>
-              <name>Gazebo/Gray</name>
+              <name>Gazebo/Black</name>
             </script>
             <shader type='vertex'>
               <normal_map>__default__</normal_map>
@@ -402,7 +402,7 @@
           <material>
             <script>
               <uri>file://media/materials/scripts/gazebo.material</uri>
-              <name>Gazebo/Gray</name>
+              <name>Gazebo/Black</name>
             </script>
             <shader type='vertex'>
               <normal_map>__default__</normal_map>
@@ -508,7 +508,7 @@
           <material>
             <script>
               <uri>file://media/materials/scripts/gazebo.material</uri>
-              <name>Gazebo/Gray</name>
+              <name>Gazebo/Black</name>
             </script>
             <shader type='vertex'>
               <normal_map>__default__</normal_map>
@@ -614,7 +614,7 @@
           <material>
             <script>
               <uri>file://media/materials/scripts/gazebo.material</uri>
-              <name>Gazebo/Gray</name>
+              <name>Gazebo/Black</name>
             </script>
             <shader type='vertex'>
               <normal_map>__default__</normal_map>
@@ -720,7 +720,7 @@
           <material>
             <script>
               <uri>file://media/materials/scripts/gazebo.material</uri>
-              <name>Gazebo/Gray</name>
+              <name>Gazebo/Black</name>
             </script>
             <shader type='vertex'>
               <normal_map>__default__</normal_map>
@@ -2455,11 +2455,6 @@
             </box>
           </geometry>
           <material>
-            <script>
-              <uri>model://asphalt_plane/materials/scripts</uri>
-              <uri>model://asphalt_plane/materials/textures</uri>
-              <name>vrc/asphalt</name>
-            </script>
             <shader type='vertex'>
               <normal_map>__default__</normal_map>
             </shader>
