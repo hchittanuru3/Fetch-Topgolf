@@ -1,6 +1,6 @@
-image: /home/chaitya/catkin_ws/src/assignment1/map/playground.pgm
+image: /home/chaitya/catkin_ws/src/Fetch-Topgolf/map/playground.pgm
 resolution: 0.050000
-origin: [-8.245193, -8.498129, 0.000000]
+origin: [8, -1, 1.57079633]
 negate: 0
 occupied_thresh: 0.65
 free_thresh: 0.196
