@@ -3,8 +3,7 @@ Panels:
     Help Height: 78
     Name: Displays
     Property Tree Widget:
-      Expanded:
-        - /Path1
+      Expanded: ~
       Splitter Ratio: 0.5
     Tree Height: 234
   - Class: rviz/Selection
@@ -333,6 +332,26 @@ Visualization Manager:
       Topic: /move_base/TrajectoryPlannerROS/global_plan
       Unreliable: false
       Value: true
+    - Alpha: 0.699999988079071
+      Class: rviz/Map
+      Color Scheme: costmap
+      Draw Behind: true
+      Enabled: true
+      Name: Local costmap
+      Topic: /move_base/local_costmap/costmap
+      Unreliable: false
+      Use Timestamp: false
+      Value: true
+    - Alpha: 0.30000001192092896
+      Class: rviz/Map
+      Color Scheme: costmap
+      Draw Behind: true
+      Enabled: true
+      Name: Global Costmap
+      Topic: /move_base/global_costmap/costmap
+      Unreliable: false
+      Use Timestamp: false
+      Value: true
   Enabled: true
   Global Options:
     Background Color: 48; 48; 48
@@ -376,10 +395,10 @@ Visualization Manager:
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Pitch: 0.6103981733322144
+      Pitch: 0.48039841651916504
       Target Frame: <Fixed Frame>
       Value: Orbit (rviz)
-      Yaw: 1.6453969478607178
+      Yaw: 1.5603971481323242
     Saved: ~
 Window Geometry:
   Displays:
@@ -399,5 +418,5 @@ Window Geometry:
   Views:
     collapsed: false
   Width: 1293
-  X: 67
-  Y: 27
+  X: 549
+  Y: 30
