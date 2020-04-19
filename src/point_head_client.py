@@ -22,3 +22,9 @@ class PointHeadClient(object):
         goal.min_duration = rospy.Duration(duration)
         self.client.send_goal(goal)
         self.client.wait_for_result()
+
+if __name__ == '__main__':
+    rospy.init_node('point_head_node')
+    head_action = PointHeadClient()
+    head_action.look_at(1.7, 0.0, 0.0, "base_link")
+
