@@ -356,8 +356,10 @@ if __name__ == "__main__":
             rospy.loginfo("Placing object...")
             pose = PoseStamped()
             pose.pose = cube.primitive_poses[0]
-            pose.pose.position.y *= -1.0
-            pose.pose.position.z += 0.02
+            rospy.loginfo(pose.pose)
+            pose.pose.position.x -= .7
+            #pose.pose.position.y
+            pose.pose.position.z = .4
             pose.header.frame_id = cube.header.frame_id
             if grasping_client.place(cube, pose):
                 cube_in_grapper = False
