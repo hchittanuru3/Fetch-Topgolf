@@ -4,7 +4,7 @@ import cv2
 
 from sensor_msgs.msg import Image
 from opencv_apps.msg import CircleArrayStamped
-
+#roslaunch opencv_apps hough_circles.launch image:=/head_camera/rgb/image_raw debug_view:=false
 GOLF_BALL_DIAMETER = 2 #idk what this is for now
 
 def image_callback(msg):
