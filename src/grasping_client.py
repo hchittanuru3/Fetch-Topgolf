@@ -2,58 +2,13 @@
 
 import rospy
 import actionlib
-from math import sin, cos
 
 from moveit_python import (MoveGroupInterface,
                            PlanningSceneInterface,
                            PickPlaceInterface)
-from move_base_msgs.msg import MoveBaseAction, MoveBaseGoal
 from grasping_msgs.msg import FindGraspableObjectsAction, FindGraspableObjectsGoal
-from control_msgs.msg import PointHeadAction, PointHeadGoal
 from moveit_msgs.msg import PlaceLocation, MoveItErrorCodes
 
-
-# Point the head using controller
-class PointHeadClient(object):
-
-    def __init__(self):
-        self.client = actionlib.SimpleActionClient("head_controller/point_head", PointHeadAction)
-        rospy.loginfo("Waiting for head_controller...")
-        self.client.wait_for_server()
-
-    def look_at(self, x, y, z, frame, duration=1.0):
-        goal = PointHeadGoal()
-        goal.target.header.stamp = rospy.Time.now()
-        goal.target.header.frame_id = frame
-        goal.target.point.x = x
-        goal.target.point.y = y
-        goal.target.point.z = z
-        goal.min_duration = rospy.Duration(duration)
-        self.client.send_goal(goal)
-        self.client.wait_for_result()
-
-# Move base using navigation stack
-class MoveBaseClient(object):
-
-    def __init__(self):
-        self.client = actionlib.SimpleActionClient("move_base", MoveBaseAction)
-        rospy.loginfo("Waiting for move_base...")
-        self.client.wait_for_server()
-
-    def goto(self, x, y, theta, frame="map"):
-        move_goal = MoveBaseGoal()
-        move_goal.target_pose.pose.position.x = x
-        move_goal.target_pose.pose.position.y = y
-        move_goal.target_pose.pose.orientation.z = sin(theta/2.0)
-        move_goal.target_pose.pose.orientation.w = cos(theta/2.0)
-        move_goal.target_pose.header.frame_id = frame
-        move_goal.target_pose.header.stamp = rospy.Time.now()
-
-        # TODO wait for things to work
-        self.client.send_goal(move_goal)
-        self.client.wait_for_result()
-
-# Tools for grasping
 class GraspingClient(object):
 
     def __init__(self):
