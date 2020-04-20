@@ -12,7 +12,7 @@ import math
 GOLF_BALL_DIAMETER = 2 #idk what this is for now
 GOAL_POSE = None
 is_at_initial_pose = False
-initial_pose = [2, 10]
+initial_pose = [3, 11]
 
 def image_callback(msg):
     try:
@@ -48,9 +48,7 @@ def pose_callback(pose):
     if round(pose.pose.pose.position.x - initial_pose[0], 1) == 0.0 and round(pose.pose.pose.position.y - initial_pose[1], 1) == 0.0:
         is_at_initial_pose = True
 
-if __name__ == '__main__':
-    #start_detection_node()
-    rospy.init_node('init_pose')
+def set_initial_pose():
     init_pub = rospy.Publisher('/initialpose', PoseWithCovarianceStamped, queue_size=10)
     pose_sub = rospy.Subscriber('/amcl_pose', PoseWithCovarianceStamped, pose_callback)
     
@@ -74,3 +72,8 @@ if __name__ == '__main__':
         init_pub.publish(p)
         r.sleep()
     print("done")
+
+if __name__ == '__main__':
+    #start_detection_node()
+    rospy.init_node('init_pose')
+    set_initial_pose()

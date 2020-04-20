@@ -16,6 +16,7 @@ class MoveBaseClient(object):
         self.client.wait_for_server()
 
     def goto(self, x, y, theta, frame="map"):
+        print(x, y, theta)
         move_goal = MoveBaseGoal()
         move_goal.target_pose.pose.position.x = x
         move_goal.target_pose.pose.position.y = y
